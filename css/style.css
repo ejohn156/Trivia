@@ -1,0 +1,29 @@
+body
+{
+    background-color: grey;
+}
+.title
+{
+    text-align: center;
+    margin-top: 2%;
+    color: blue;
+    font-size: 4em;
+}
+.quiz
+{
+    background-color: lightgoldenrodyellow;
+    margin-top: 2%;
+}
+.start
+{
+    padding-top: 10%;
+    padding-bottom: 10%;
+    margin: -20px -50px; 
+    position:relative;
+    top:50%; 
+    left:50%;
+}
+.question
+{
+   color: red; 
+}
