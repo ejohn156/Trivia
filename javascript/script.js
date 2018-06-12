@@ -126,11 +126,11 @@ function gradeQuiz() {
         else if (btnValue == "false") {
             wrong++;
             //unanswered--;
-            
+
         }
-        else{
-        (alert(i))
-        unanswered++
+        else {
+            (alert(i))
+            unanswered++
         }
     }
     alert("correct " + correct)
