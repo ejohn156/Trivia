@@ -1,5 +1,5 @@
 
-$("#submit").hover(function(){
+$("#submit").hover(function () {
     $("#submit").css("background-color", "green")
 });
 
@@ -12,7 +12,7 @@ $(".start").on("click", function () {
     $(".start").hide();
     $(".question").show();
     $(".result").hide();
-    
+
     generateQuiz();
     run();
 });
@@ -126,11 +126,11 @@ function gradeQuiz() {
         var btnValue = $("input[name=que" + i + "]:checked").attr("value");
         if (btnValue == "true") {
             correct++;
-            unanswered--;  
+            unanswered--;
         }
         else if (btnValue == "false") {
             wrong++
-            unanswered--  
+            unanswered--
         }
     }
     $("#correct").html("<h3>" + correct + "</h3>")
@@ -157,7 +157,7 @@ function decrement() {
     }
 }
 function stop() {
-    
+
     clearInterval(intervalId);
     $(".start").hide()
     $(".question").hide()
