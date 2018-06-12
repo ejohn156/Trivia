@@ -121,21 +121,19 @@ function gradeQuiz() {
         var btnValue = $("input[name=que" + i + "]:checked").attr("value");
         if (btnValue == "true") {
             correct++;
-            //unanswered--;
+            
         }
         else if (btnValue == "false") {
             wrong++;
-            //unanswered--;
+            
 
         }
         else {
-            (alert(i))
+            
             unanswered++
         }
     }
-    alert("correct " + correct)
-    alert("incorrect " + wrong)
-    alert("unanswered " + unanswered)
+    
     $("#correct").html("<h3>" + correct + "</h3>")
     $("#incorrect").html("<h3>" + wrong + "</h3>")
     $("#unanswered").html("<h3>" + unanswered + "</h3>")
