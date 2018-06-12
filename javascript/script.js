@@ -2,7 +2,6 @@
 $("#submit").hover(function () {
     $("#submit").css("background-color", "green")
 });
-
 $("document").ready(function () {
     $(".question").hide();
     $(".start").show();
@@ -16,8 +15,6 @@ $(".start").on("click", function () {
     generateQuiz();
     run();
 });
-
-
 function generateQuiz() {
     for (var i = 0; i < 12; i++) {
         var a = randomNum();
@@ -47,7 +44,6 @@ function solutionFinder(a, b, c) {
     if (c == "*")
         return (a * b)
 }
-
 function generateButton(x, a, b, c, i) {
     var queGroup = "que" + i
     if (x == solutionFinder(a, b, c)) {
@@ -98,7 +94,6 @@ function randomOP() {
 function questionVary() {
     return Math.floor(Math.random() * 10)
 }
-
 function questionGen(a, b, operation, d, i) {
     var queDiv = $("<div>")
     queDiv.html("<strong>" + (i + 1) + ")  " + a + " " + operation + " " + b + "</strong><br>")
@@ -119,30 +114,35 @@ function questionGen(a, b, operation, d, i) {
     }
 }
 function gradeQuiz() {
-    var unanswered = 12;
+    var unanswered = 0;
     var correct = 0;
     var wrong = 0;
-    for (var i = 1; i < 13; i++) {
+    for (var i = 0; i < 12; i++) {
         var btnValue = $("input[name=que" + i + "]:checked").attr("value");
         if (btnValue == "true") {
             correct++;
-            unanswered--;
+            //unanswered--;
         }
         else if (btnValue == "false") {
-            wrong++
-            unanswered--
+            wrong++;
+            //unanswered--;
+            
+        }
+        else{
+        (alert(i))
+        unanswered++
         }
     }
+    alert("correct " + correct)
+    alert("incorrect " + wrong)
+    alert("unanswered " + unanswered)
     $("#correct").html("<h3>" + correct + "</h3>")
     $("#incorrect").html("<h3>" + wrong + "</h3>")
     $("#unanswered").html("<h3>" + unanswered + "</h3>")
 }
-
 var number = 30;
 var intervalID;
 $("#timer").html("<h3>" + number + "</h3>");
-
-
 function run(number) {
 
     intervalId = setInterval(decrement, 1000);
@@ -164,7 +164,6 @@ function stop() {
     $(".result").show()
     gradeQuiz()
 }
-
 function submit() {
     stop()
 }
